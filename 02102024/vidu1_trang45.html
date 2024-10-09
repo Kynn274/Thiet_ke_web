@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liên kết JavaScript</title>
+
+    <script>
+        function fnHello() {
+            alert("Hello World !");
+        }
+    </script>
+</head>
+<body>
+    <!-- Click vào đây không xảy ra gì -->
+    <a href="javascript:;">Do nothing</a>
+    <!-- Click vào đây sẽ gọi hàm fnHello() -->
+    <a href="javascript:fnHello();">Hello World</a>
+
+    <!-- Submit form Myform -->
+    <a href="javascript:{document.myForm.submit()}">Submit my form</a>
+    <hr>
+    <form name="myForm" action="MyPage.php">
+        <input type="hidden" name="txtProductId" value="Nokia">
+        <input type="hidden" name="txtQuantity" value="2">
+    </form>
+</body>
+</html>
