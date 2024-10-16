@@ -1,0 +1,23 @@
+<canvas id="myCanvas" width="500" height="500">
+    <script>
+        const canvas = document.getElementById("myCanvas");
+        const ctx = canvas.getContext("2d");
+        ctx.fillStyle = "#ff0000";
+        ctx.beginPath();
+        ctx.moveTo(200, 50);
+        ctx.bezierCurveTo(270, 10, 280, 80, 200, 120);
+        ctx.bezierCurveTo(120, 80, 130, 10, 200, 50);
+        ctx.shadowBlur = 5;
+        ctx.shadowColor = "#000000";
+        ctx.fill();
+        ctx.fillStyle = "#ffff00";
+        ctx.beginPath();
+        ctx.moveTo(280, 60);
+        ctx.bezierCurveTo(350, 20, 360, 90, 280, 130);
+        ctx.bezierCurveTo(200, 90, 210, 20, 280, 60);
+        ctx.shadowBlur = 5;
+        ctx.shadowColor = "#000000";
+        ctx.fill();
+        
+    </script>
+</canvas>

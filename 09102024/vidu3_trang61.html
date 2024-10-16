@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sử dụng form</title>
+</head>
+
+<style>
+    .fullForm {
+        background-color: #20adff;
+        color: white;
+        border: 1px solid rgb(180, 180, 180);
+        border-radius: 10px;
+        width: max-content;
+        height: max-content;
+        margin: 0 auto;
+    }
+    .fullForm h3 {
+        text-align: center;
+        padding: 0 15px;
+    }
+    .fullForm form{
+        padding: 0 15px;
+        margin-bottom: 25px;
+        display: flex;
+        flex-direction: column;
+        align-items: left;
+        justify-content: start;
+        gap: 5px;
+    }
+    .fullForm form input {
+        width: calc(100% - 12px);
+        padding: 4px;
+        border-radius: 5px;
+        border: 1px solid rgb(180, 180, 180);
+    }
+</style>
+
+<body>
+    <form action="">
+        First name: <br>
+        <input type="text" name="firstname" value="Mickey">
+        <br>
+        Last name: <br>
+        <input type="text" name="lastname" value="Mouse">
+        <br><br>
+        <input type="submit" value="Submit">
+    </form>
+
+    <br><br>
+    <form action="https://www.google.com.vn/">
+        <input type="text" name="q"/>
+        <input type="submit" value="Tìm kiếm"/>
+    </form>
+    <br><br>
+    <form action="/action_page.php">
+        First name: <br>
+        <input type="text" value="David">
+        <br>
+        Last name: <br>
+        <input type="text" name="lastname" value="Beckham">
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+
+    <br><br>
+    <div class="fullForm">
+        <h3>Form điền thông tin</h3>
+        <form action="/action_page.php">
+            Họ tên: <br> <input type="text" name="fullname" placeholder="Nhập họ tên" />
+            <br>
+            Email: <br> <input type="email" name="email" placeholder="Nhập email" />
+            <br>
+            Password: <br> <input type="password" name="password" placeholder="Nhập password" />
+            <br>
+            Sex: <br>
+            <div>
+                Male <input type="radio" name="sex" value="male" /> 
+                Female<input type="radio" name="sex" value="female" /> 
+            </div> 
+
+            <br>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+</html>
