@@ -1,0 +1,153 @@
+*{
+    padding: 0;
+    margin: 0; 
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Epilogue', sans-serif !important;
+    background-color: #000 !important;
+}
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0.5);
+    z-index: 1;
+}
+header>a{
+    font-size: 16px;
+    font-weight: 700;
+    text-align: left;
+    vertical-align: middle;
+    margin: 10px 0 10px 10px;
+    width: fit-content;
+    text-decoration: none;
+    color: #fff;
+}
+header .subnav{
+    height: 60px;
+    width: calc(100% - 140px);
+    margin-left: 50px;
+}
+header .subnav ul{
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0 10px;
+    font-size: 22px;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+header .subnav ul li{
+    height: 100%;
+    width: fit-content;
+    line-height: 60px;
+    padding: 0 25px;
+    list-style: none;
+}
+header .subnav ul li a{
+    text-decoration: none;
+    color: #fff;
+    width: fit-content;
+}
+header .subnav ul li.active{
+    background-color: #ccc;
+}
+header .subnav ul li.active a{
+    color: #000;
+    font-weight: 600;
+}
+header .subnav ul li:hover:not(.active){
+    background-color: #ccc;
+    animation: fadeIn 0.5s ease-in-out;
+}
+header .subnav ul li:hover a{
+    color: #000;
+}
+
+#container{
+    width: 100%;
+    height: calc(100vh - 120px);
+}
+#home, #schedule, #hobbies, #contact{
+    margin: 0 auto;
+    padding: 15px 20px;
+    max-width: 800px;
+    width: 100%;
+    height: 100%;
+}
+.header{  
+    width: 100%;
+    color: rgb(94, 204, 153);
+    font-weight: 600;
+    letter-spacing: 1px;
+    opacity: 1;
+    margin: 15px 0; 
+}
+#home .header{
+    text-align: center;
+    font-size: 24px;
+}
+#home .content{
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
+    margin: 10px 0;
+    padding: 15px;
+}
+#home .content img{
+    width: 250px;
+    object-fit: cover;
+    border-radius: 10%;
+    box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0.5);
+    float: left;
+    margin: 0 80px 0 10px;
+    display: block;
+}
+.content p{
+    padding: 0 10px;
+    margin: 10px 0;
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-align: justify;
+}
+.content .item-title{
+    font-weight: 600;
+    font-size: 18px;
+    color: #fff;
+    opacity: 0.3;
+}
+.content .item-content{
+    font-weight: 300;
+    font-size: 24px;
+    color: #fff;
+    opacity: 0.8;
+}
+#schedule .header h2, #hobbies .header h2, #contact .header h2 {
+    text-align: left;
+    font-size: 36px !important;
+
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
