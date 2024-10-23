@@ -80,6 +80,8 @@ header .subnav ul li:hover a{
 }
 
 #container{
+    position: relative;
+    top: 60px;
     width: 100%;
     height: calc(100vh - 120px);
 }
@@ -140,7 +142,7 @@ header .subnav ul li:hover a{
 }
 #schedule .header h2, #hobbies .header h2, #contact .header h2 {
     text-align: left;
-    font-size: 36px !important;
+    font-size: 40px !important;
 
 }
 @keyframes fadeIn {
