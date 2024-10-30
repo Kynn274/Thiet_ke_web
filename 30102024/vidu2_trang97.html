@@ -1,0 +1,115 @@
+<html>
+    <head>
+        <title>HTML, CSS & JQuery</title>
+        <style type="text/css">
+            /* Vỏ bọc bên ngoài rộng 900px, canh giữa, nền trắng */
+            .container{
+                width: 900px;
+                margin: 0px auto;
+                background-color: white;
+            }
+            /* Đầu trang cao 100px */
+            .top{
+                height: 100px;
+                background-color: red;
+            }
+            /* Menu trang cao 22px, canh giữa */
+            .menu{
+                height: 22px;
+                background-color: yellow;
+                text-align: center;
+            }
+            /* Canh giữa trang cao tối thiểu 400px */
+            .middle{
+                min-height: 400px;
+            }
+            /* Giữa - trái cao như middle, rộng 250px, gâm trái */
+            .middle_left{
+                float: left;
+                min-height: inherit;
+                width: 250px;
+                background-color: aqua;
+            }
+            /* Giữa - phải cao như middle, rộng 650px, gâm phải */
+            .middle_right{
+                float: right;
+                min-height: inherit;
+                width: 645px;
+                background-color: white;
+            }
+            /* Chân trang không gâm, cao 22px */
+            .bottom{
+                clear: both;
+                height: 22px;
+                background-color: yellow;
+            }
+            /* fieldset trong, .middle_left cao tối thiểu 150px */
+            .middle_left fieldset{
+                min-height: 150px;
+            }
+            /* li trong .middle_left không dùng dấu, kẻ chân */
+            .middle_left li{
+                list-style-type: none;
+                border-bottom: 1px dotted red;
+            }
+            /* Liên kết trong .menu cách nhau 20px */
+            .menu a{
+                padding: 0px 10px;
+            }
+            /* Liên kết trong .middle_left chữ Hoa nhỏ */
+            .middle_left a{
+                font-variant: small-caps;
+            }
+            /* Liên kết có chuột trong .middle_left in đậm */
+            .middle_left a:hover{
+                font-weight: bold;
+            }
+            /* Liên kết chung cho toàn trang */
+            a{
+                text-decoration: none;
+            }
+            a:link, a:active, a:visited{
+                color: blue;
+            }
+            a:hover{
+                color: red;
+            }
+            body{
+                background-color: gray;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="top"></div>
+            <div class="menu">
+                <a href="#1">Home</a> |
+                <a href="#2">About Us</a> |
+                <a href="#3">Contact Us</a> |
+                <a href="#4">Feedback</a> |
+                <a href="#5">FAQs</a>
+            </div>
+            <div class="middle">
+                <div class="middle_left">
+                    <fieldset>
+                        <legend>Member Info</legend>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Products</legend>
+                        <li><a href="#1">Nokia</a></li>
+                        <li><a href="#2">Samsung</a></li>
+                        <li><a href="#3">Sony Ericsson</a></li>
+                        <li><a href="#4">Motorola</a></li>
+                        <li><a href="#5">Apple</a></li>
+                        <li><a href="#6">Seamen</a></li>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Online Support</legend>
+                    </fieldset>
+                </div>
+                <div class="middle_right"></div>
+            </div>
+            <div class="bottom"></div>
+        </div>
+    </body>
+</html>
