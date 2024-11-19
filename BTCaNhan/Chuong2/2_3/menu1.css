@@ -1,0 +1,42 @@
+.menu-ngang{
+    width: 960px;
+    height: 50px;
+    background-color: #ccc;
+}
+.menu-ngang ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    float: left;
+}
+.menu-ngang ul li{
+    float: left;
+    position: relative;
+}
+.menu-ngang ul li a{
+    text-decoration: none;
+    color: #333;
+    padding: 0 20px;
+    line-height: 50px;
+    border-right: 1px solid #333;
+}
+.menu-ngang ul li ul{
+    position: absolute;
+    background-color: #ccc;
+    display: none;
+    width: 110%;
+}
+.menu-ngang ul li ul li a{
+    border-right: none;
+    border-bottom: 1px solid #fff;
+    line-height: 30px;
+    display: block;
+    text-align: left;
+    width: 100%;
+}
+.menu-ngang ul li ul li a:hover{
+    font-weight: bold;
+}
+.menu-ngang ul li:hover ul{
+    display: block;
+}
