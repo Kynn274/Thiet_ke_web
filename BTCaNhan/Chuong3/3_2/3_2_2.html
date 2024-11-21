@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tra bảng giá</title>
+    <style>
+        div{
+            border: 1px solid black;
+            width: 300px;
+            padding: 5px;
+        }
+        h1{
+            margin: 0;
+        }
+        input{
+            padding: 5px;
+            margin: 10px 0;
+            width: 65%;
+        }
+        button{
+            width: 25%;
+            padding: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Giá hoa quả</h1>
+        <input type="text" id="input-fruit" placeholder="Nhập tên hoa quả">
+        <button id="btn-search">Xem giá</button>
+        <p id="result"></p>
+    </div>
+    <script>
+        let inputFruit = document.querySelector("#input-fruit");
+        let btnSearch = document.querySelector("#btn-search");
+        let result = document.querySelector("#result");
+
+        let fruits = {
+            "táo": 30000,
+            "cam": 40000,
+            "ổi": 20000, 
+            "dưa hấu": 20000,
+            "chôm chôm": 40000,
+            "măng cụt": 50000
+        };
+        btnSearch.addEventListener("click", function(){
+            let fruit = inputFruit.value.trim().toLowerCase();
+            if(fruit == ""){
+                result.textContent = "Vui lòng nhập tên hoa quả";
+            }else{
+                if(fruits[fruit]){
+                    result.textContent = fruits[fruit] + " VND/kg";
+                }else{
+                    result.textContent = "Không tìm thấy giá của " + fruit;
+                }
+            }
+        });
+    </script>
+</body>
+</html>

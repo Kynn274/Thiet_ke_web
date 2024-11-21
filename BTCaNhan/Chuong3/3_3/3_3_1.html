@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý sản phẩm</title>
+    <style>
+        .add-form{
+            display: flex;
+            justify-content: space-between;
+            width: fit-content;
+            padding: 20px;
+            background-color: aliceblue;
+        }
+        input{
+            width: 70%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button{
+            width: fit-content;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-left: 10px;
+        }
+        table{
+            width: 100%;
+            max-width: 800px;
+        }
+        thead th{
+            width: 100%;
+        }
+        #quantity{
+            float: right;
+        }
+        tbody tr:nth-child(even){
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h2>Add New Product</h2>
+    <div class="add-form">
+        <input type="text" id="input-product-name" placeholder="New Product">
+        <button id="btn-add">Add</button>
+    </div>
+    <h2>Display All Products</h2>
+    <div class="product-list">
+        <table>
+            <thead>
+                <tr>
+                   <th colspan="4">
+                        <span style="float: left;">Product Name</span>
+                        <span style="float: right;" id="quantity"></span>
+                   </th> 
+                </tr>
+            </thead>
+            <tbody id="product-list-display">
+
+            </tbody>
+        </table>
+    </div>
+    <script>
+        let inputProductName = document.querySelector("#input-product-name");
+        let btnAdd = document.querySelector("#btn-add");
+        let productListDisplay = document.querySelector("#product-list-display");
+        let quantity = document.querySelector("#quantity");
+        var count = 0;
+        let products = [
+            "Sony Xperia",
+            "Samsung Galaxy",
+            "Nokia 6",
+            "Xiaomi Redmi Note 4",
+            "Apple iPhone 6S",
+            "Xiaomi Mi 5s Plus",
+            "Apple iPhone 8 Plus",
+            "Fujitsu F-04E",
+            "Oppo A71"
+        ];
+
+        function displayProductList(){
+            productListDisplay.innerHTML = "";
+            count = 0;
+            products.forEach(product => {
+                let tr = document.createElement("tr");
+                count++;
+                let td1 = document.createElement("td");
+                td1.textContent = count;
+                tr.appendChild(td1);
+                let td2 = document.createElement("td");
+                td2.textContent = product;
+                tr.appendChild(td2);
+                let td4 = document.createElement("td");
+                let editBtn = document.createElement("button");
+                editBtn.textContent = "Edit";
+                td4.appendChild(editBtn);
+                tr.appendChild(td4);
+                let td3 = document.createElement("td");
+                let deleteBtn = document.createElement("button");
+                deleteBtn.textContent = "Delete";
+                td3.appendChild(deleteBtn);
+                tr.appendChild(td3);
+                productListDisplay.appendChild(tr);
+
+                deleteBtn.addEventListener("click", () => {
+                    deleteProduct(parseInt(td1.textContent)-1);
+                });
+                td2.addEventListener("click", () => {
+                    productListDisplay.querySelectorAll("input").forEach(input => {
+                        let productName = input.value;
+                        input.parentNode.textContent = productName;
+                        input.remove();
+                    });
+
+                    let inputEditProductName = document.createElement("input");
+                    inputEditProductName.type = "text";
+                    inputEditProductName.value = product;
+                    td2.textContent = "";
+                    td2.appendChild(inputEditProductName);
+
+                    editBtn.addEventListener("click", () => {
+                        let product = inputEditProductName.value;
+                        editProduct(parseInt(td1.textContent)-1, product);
+                    });
+                });
+                
+            });
+            quantity.textContent = products.length + " products";
+        }
+
+        function deleteProduct(index){
+            products.splice(index, 1);
+            displayProductList();
+        }
+
+        function addProduct(product){
+            products.push(product);
+            displayProductList();
+            alert("Product added successfully");
+        }
+
+        function editProduct(index, product){
+            products[index] = product;
+            displayProductList();
+        }
+
+        displayProductList();
+        btnAdd.addEventListener("click", () => {
+            let product = inputProductName.value;
+            addProduct(product);
+        });
+
+    </script>
+</body>
+</html>
