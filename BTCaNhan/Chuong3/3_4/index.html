@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giao diện tính tiền bán hàng</title>
+    <style>
+        table{
+            width: 100%;
+            border-collapse: collapse;
+            border: 1px solid #000;
+        }
+        th, td{
+            border: 1px solid #000;
+            padding: 5px;
+            background-color: #ddd;
+        }
+        td:nth-child(6){
+            background-color: #666;
+        }
+        td:nth-child(5), td:nth-child(4), td:nth-child(3){
+            background-color: #f2f2f2;
+        }
+        input{
+            background-color: #fff;
+            width: inherit;
+        }
+        button{
+            background-color: #000;
+            color: #fff;
+            padding: 5px 10px;
+        }
+        button:hover{
+            background-color: #333;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>STT</th>
+                <th>Tên hàng hóa</th>
+                <th>Số lượng có</th>
+                <th>Số lượng mua</th>
+                <th>Đơn giá</th>
+                <th>Chọn mua</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+    <button id="btn-print" style="float: right; margin-top: 10px;">In hóa đơn</button>
+    <script>
+        let tbody = document.querySelector("tbody");
+        let productList = [
+            {name: "CPU", quantity: 14, price: 120},
+            {name: "HDD", quantity: 14, price: 10},
+            {name: "RAM", quantity: 12, price: 29},
+            {name: "ROM", quantity: 23, price: 130},
+        ];
+
+        function displayProductList(){
+            var count = 0;
+            tbody.innerHTML = "";
+            productList.forEach((product, index) => {
+                let tr = document.createElement("tr");
+                count++;
+                tr.innerHTML = `
+                    <td>${count}</td>
+                    <td>${product.name}</td>
+                    <td><input type="number" name="quantity" value="${product.quantity}" disabled></td>
+                    <td><input type="number" name="quantity-buy" min="0" max="${product.quantity}" value="0"></td>
+                    <td><input type="text" name="price" value="${product.price} $" disabled></td>
+                    <td align="center"><input type="checkbox" name="checkbox"></td>
+                `;
+                tbody.appendChild(tr);
+            });
+            let tr = document.createElement("tr");
+            tr.innerHTML = `
+                <td colspan="2"></td>
+                <td>
+                    <button id="btn-ok">OK</button>
+                    <button id="btn-reset">Nhập lại</button>
+                </td>
+                <td colspan="2">
+                    <label for="total-price">Tổng cộng: </label>
+                    <input type="number" name="total-price" value="0" disabled>
+                </td>
+                <td><input type="checkbox" name="checkbox-VAT"> VAT</td>
+            `;
+            tbody.appendChild(tr);
+            document.querySelector("#btn-ok").addEventListener("click", calculateTotalPrice);
+            document.querySelector("#btn-reset").addEventListener("click", displayProductList);
+            document.querySelector("input[name='checkbox-VAT']").addEventListener("change", calculateTotalPrice);
+        }
+
+        function calculateTotalPrice(){
+            let totalPrice = 0;
+            let rows = tbody.querySelectorAll("tr:not(:last-child)");
+            rows.forEach((tr) => {
+                let checkbox = tr.querySelector("input[type='checkbox']");
+                if(checkbox && checkbox.checked){
+                    let quantityBuy = parseInt(tr.querySelector("td:nth-child(4) input").value);
+                    let price = productList[parseInt(tr.querySelector("td:nth-child(1)").textContent) - 1].price;
+                    totalPrice += quantityBuy * price;
+                }
+            });
+            let totalPriceInput = tbody.querySelector("tr:last-child input[name='total-price']");
+            let VAT = tbody.querySelector("tr:last-child input[type='checkbox']");
+            if(VAT.checked){
+                totalPriceInput.value = totalPrice * 1.1;
+            }else{
+                totalPriceInput.value = totalPrice;
+            }
+        }
+
+        displayProductList();
+        document.querySelector("#btn-print").addEventListener("click", function(){
+            window.print();
+        });
+    </script>
+</body>
+</html>
