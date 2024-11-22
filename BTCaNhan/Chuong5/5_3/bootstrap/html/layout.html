@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../css/layout.css">
+</head>
+<body>
+    <div class="container" style="height:auto;">
+        <header class="hh-header">
+            <h1 class="hh-company">FIT-HCMUE Shop</h1>
+            <h5 class="hh-slogan">Bring knowledge to everyone</h5>
+            <img class="hh-logo" src="../images/header-object.jpg" alt="logo">
+        </header>
+
+
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Giới thiệu</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Sản phẩm</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Liên hệ</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Hỏi đáp</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Tài khoản
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Đăng nhập</a></li>
+                      <li><a class="dropdown-item" href="#">Đăng ký</a></li>
+                      <li><a class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="#">Đăng xuất</a></li>
+                    </ul>
+                  </li>
+                </ul>
+                <form class="d-flex" role="search">
+                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="width: fit-content; float: right; margin-right: 10px;">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">English</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Tiếng Việt</a>
+                    </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+
+          <div class="side-bar">  
+            <div class="cart hh-cart">
+                <div class="card-header">
+                    <Strong>Giỏ hàng</Strong>
+                </div>
+                <div class="card-body row">
+                    <img src="../images/shopping-cart.jpg" alt="" class="col-md-5">
+                    <ul class="col-md-7">
+                        <li>10 sp</li>
+                        <li>5,000,000 đ</li>
+                        <li><a href="">Giỏ hàng</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="cart hh-cart">
+                <div class="card-header">
+                    <i class="bi bi-apple"></i>
+                    <Strong>Tìm kiếm</Strong>
+                </div>
+                <div class="card-body">
+                    <form action="">
+                        <input type="text" class="form-control" placeholder="Keyword">
+                    </form>
+                </div>
+            </div>
+
+            <div class="cart hh-cart">
+                <div class="card-header">
+                    <i class="bi bi-list"></i>
+                    <Strong>Chủng loại</Strong>
+                </div>
+                <div class="list-group">
+                    <a href="#" class="list-group-item">
+                        Điện thoại
+                        <span class="badge badge-primary badge-pill">55</span>
+                    </a>
+                    <a href="#" class="list-group-item">Laptop</a>
+                    <a href="#" class="list-group-item">Tablet</a>
+                    <a href="#" class="list-group-item">Điều hòa</a>
+                    <a href="#" class="list-group-item">Tivi</a>
+                    <a href="#" class="list-group-item">Tủ lạnh</a>
+                    <a href="#" class="list-group-item">Điện gia dụng</a>
+                </div>
+            </div>
+
+            <div class="cart hh-cart">
+                <div class="card-header">
+                    <i class="bi bi-apple"></i>
+                    <Strong>Nhà cung cấp</Strong>
+                </div>
+                <div class="list-group">
+                    <a href="#" class="list-group-item">Apple</a>
+                    <a href="#" class="list-group-item">Samsung</a>
+                    <a href="#" class="list-group-item">Nokia</a>
+                    <a href="#" class="list-group-item">LG</a>
+                    <a href="#" class="list-group-item">Sony Ericsson</a>
+                    <a href="#" class="list-group-item">Dell</a>
+                </div>
+            </div>
+        </div>
+        <div class="hh-sheet row" style="width: 80%;">
+            <article class="col-sm-12">
+                <img class="hh-product-image" src="../images/product.avif" alt="" style="float: left;">
+                <div class="hh-product-description">
+                    <h5>Điện thoại</h5>
+                    <h2>iPhone 14 Pro MAX - 256GB</h2>
+                    <hr>
+                    <h3>29,999,000 đ</h3>
+                    <div class="hh-product-quantity">
+                        <span>1</span> <button class="btn btn-primary">Thêm vào giỏ</button> <button class="btn btn-warning">Yêu thích</button>
+                    </div>
+                    <hr>
+                    <h6 class="hh-product-description-title">Mô tả sản phẩm</h6>
+                    <p class="hh-product-description-content">
+                        <ul>
+                            <li>
+                                Màn hình: 6.7 inches, 2796 x 1290 pixel
+                            </li>
+                            <li>
+                                Hệ điều hành: iOS 16
+                            </li>
+                            <li>
+                                Công nghệ màn hình: Super Retina XDR OLED
+                            </li>
+                            <li>
+                                Camera chính: 48 MP, f/1.8, OIS
+                            </li>
+                            <li>
+                                Camera góc siêu rộng: 12 MP, f/2.2, PDAF
+                            </li>
+                            <li>
+                                Camera tele: 12 MP, f/2.8, PDAF, OIS, 3x optical zoom
+                            </li>
+                            <li>
+                                Camera selfie: 12 MP, f/1.9, 23mm, 1/3.6", PDAF
+                            </li>
+                            <li>
+                                RAM: 6GB, 256GB
+                            </li>
+                            <li>
+                                Thẻ SIM: 2 SIM (Nano-SIM và eSIM)
+                            </li>
+                            <li>
+                                Tính năng màn hình: 120Hz, Always-On Display. HDR. True Tone, Haptic Touch
+                            </li>
+                            <li>
+                                Pin: 4352 mAh
+                            </li>
+                        </ul>
+                    </p>
+                    <hr>
+                    <h4>Chia sẻ về sản phẩm</h4>
+                    <div class="hh-product-social">
+                        <button><i class="bi bi-facebook"></i></button>
+                        <button><i class="bi bi-twitter"></i></button>
+                        <button><i class="bi bi-instagram"></i></button>
+                    </div>
+                </div>
+            </article>
+        </div>
+        <footer class="row card"></footer>
+    </div>
+
+
+    
+    
+</body>
+</html>

@@ -1,0 +1,112 @@
+.hh-header{
+    position: relative;
+    height: 170px;
+}
+.hh-logo{
+    position: absolute;
+    right: 0;
+    width: 300px;
+}
+.hh-company{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 35px;
+    text-shadow: 0 0 2px black;
+    position: absolute;
+    top: 45px;
+    padding-bottom: 2px;
+    border-bottom: 1px dotted gray;
+}
+.hh-slogan{
+    position: absolute;
+    top: 100px;
+}
+.hh-sheet{
+    box-shadow: 0 0 5px lightgray;
+    border-radius: 10px;
+    padding: 5px;
+    position: relative;
+    top: -10px;
+    margin-top: 20px;
+    height: fit-content;
+    width: fit-content;
+}
+.hh-body{
+    padding: 5px;
+}
+.hh-cart ul{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    font-size: smaller;
+}
+.hh-cart img{
+    height: 30%;
+    width: 30%;
+}
+.hh-cart{
+    margin: 7px 0;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+}
+.hh-product{
+    text-align: center;
+    padding: 5px 2px;
+    display: inline-block;
+}
+.hh-product .cart-body img{
+    height: 150px;
+    max-width: 95%;
+}
+.side-bar{
+    position: absolute;
+    width: 20%;
+    right: 0;
+    gap: 10px;
+}
+.container{
+    position: relative;
+}
+.card-header{
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px;
+    border-bottom: 1px solid lightgray;
+    background-color: #f0f0f0;
+}
+.card-body{
+    margin-top: 10px;
+    padding: 10px;
+}
+
+.hh-product-social{
+    display: flex;
+    gap: 10px;
+}
+.hh-product-social button{
+    border: none;
+    background-color: transparent;
+}
+.hh-product-quantity{
+    display: flex;
+    gap: 10px;
+}
+.hh-product-quantity span{
+    font-size: 20px;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    padding: 5px;
+    width: 50px;
+    text-align: center;
+}
+article{
+    display: flex;
+    gap: 10px;
+    padding: 20px;
+}
+.hh-product-image{
+    width: 50%;
+    height:90%;
+}
+.hh-product-description{
+    padding: 20px 10px;
+}
